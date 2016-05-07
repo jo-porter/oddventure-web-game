@@ -1,0 +1,22 @@
+$def with (content)
+<html>
+	<head>
+		<title>Oddventure</title>
+	</head>
+	<body>
+
+
+		<div class="content">
+		$:content
+		</div>
+
+	</body>
+	<footer>
+		<div id="form">
+			<form action="/game" method="POST">
+					<input id="text" type="text" name="action" autocomplete="off"> <input id='submit' type="submit" value="GO">
+			</form>
+		</div>
+	</footer>
+
+</html>

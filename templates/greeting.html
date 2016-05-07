@@ -1,0 +1,353 @@
+<style type="text/css">
+
+	body {
+		background-color: green;
+		font-size: 25px;
+		font-style: italic;
+		margin: 0;
+		padding: 0;
+		color: green;
+
+	}
+
+	.content {
+
+		height: 90%;
+		position:relative;
+	}
+
+	#description {
+
+		padding: 5px;
+		text-align: center;
+		width: 500px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
+		color: white;
+		height: 90%;
+
+	}
+
+	#sky {
+		width: 100%;
+		height: 60%;
+		background-color: #6EDBFA;
+		margin-bottom: none;
+		position: static;
+
+	}
+
+	.cloud {
+		background-color: white;
+		position: fixed;
+
+
+	}
+
+	#cloud1 {
+		width: 120px;
+		height: 120px;
+		margin: 50px;
+		border-radius: 50% 50% 0% 50%;
+
+	}
+
+	#cloud2 {
+		width: 150px;
+		height: 150px;
+		border-radius: 50% 50% 0% 0%;
+		margin: 20px 110px;
+
+	}
+
+	#cloud3 {
+		width: 120px;
+		height: 120px;
+		border-radius: 50% 50% 50% 0%;
+		margin: 50px 200px;
+
+	}
+
+	#sun-middle {
+		width: 100px;
+		height: 100px;
+		float: right;
+		background-color: yellow;
+		border-radius: 50%;
+		margin: 40px 40px 0 0;
+
+}	
+
+
+
+	#land {
+		width: 100%;
+		height: 50%;
+		background-color: green;
+		color: white;
+		margin-top: none;
+		position: absolute;
+
+	}
+
+	body {
+		background-color: green;
+
+	}
+
+		@font-face {
+			font-family: 'caudex';
+			src: url('../caudex-italic.ttf');
+		}
+
+	#form {
+		width: 400px;
+		margin-right: auto;
+		margin-left: auto;
+		padding: none;
+		margin: none;
+		position: relative;
+
+	}
+
+	#text {
+		width: 400px;
+/*			height: 40px;
+*/			font-size: 20px;
+
+	}
+
+	#submit {
+		width: 80px;
+		margin-top: 2px;
+		margin-left: 160px;
+
+	}
+
+	footer {
+			margin-right: auto;
+			margin-left: auto;
+
+		}
+
+.flower {
+  height: 150px;
+  width: 100px;
+  position: absolute;
+  margin-top: -100px;
+}
+
+.petal1 {
+  background-color: #820C0C;
+  
+}
+
+.petal2 {
+	background-color: #4C128E;
+
+}
+
+
+#petal1 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+/*   border: 1px solid #E46262; */
+  margin-top: 20px;
+  margin-left: 40px;
+  position: absolute;
+}
+
+#petal2 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+/*   border: 1px solid #E46262; */
+  margin-top: 20px;
+  margin-left: 20px;
+  position: absolute;
+}
+
+#petal4 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+/*   border: 1px solid #E46262; */
+  margin-top: 40px;
+  margin-left: 20px;
+  position: absolute;
+}
+
+#petal3 {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+/*   border: 1px solid #E46262; */
+  margin-top: 40px;
+  margin-left: 40px;
+  position: absolute;
+}
+
+#flower2 {
+	margin-left: 200px;
+
+}
+
+
+.middle {
+ background-color: yellow;
+ width: 23px;
+ height: 23px;
+ border-radius: 50%;
+ position: absolute;
+ margin-left: 34px;
+ margin-top: 33px;
+}
+
+.stem {
+  border-radius: 60% 60% 0 0;
+  width: 4px;
+  height:60px;
+  background-color: green;
+  position: absolute;
+  margin-left: 43px;
+  margin-top: 66px;
+}
+
+.leaf1 {
+  width: 20px;
+  height: 15px;
+  border-radius:60% 30% 60%;
+  background-color: green;
+  position:absolute;
+  margin-left: 45px;
+  margin-top: 90px;
+}
+
+.leaf2 {
+  width: 20px;
+  height: 15px;
+  border-radius:30% 60% 30%;
+  background-color: green;
+  position:absolute;
+  margin-left: 25px;
+  margin-top: 92px;
+}
+
+.tree-container {
+  height: 0px;
+  width:0px;
+  margin: -90px 1100px;
+  position: relative;
+}
+.bush {
+  height: 70px;
+  width: 70px;
+  background-color: green;
+  border-radius: 50%;
+  margin-left: 60px;
+  position: absolute;
+  z-index: 2;
+}
+#bush1 {
+  margin: -40px -55px;
+  position: absolute;
+}
+#bush2 {
+  margin: -30px -10px;
+  position: absolute;
+}
+#bush3 {
+  margin: -35px 30px;
+  position: absolute;
+}
+#bush4 {
+  margin: -75px 10px;
+  position: absolute;
+}
+#bush5 {
+  margin: -75px -30px;
+  position: absolute;
+}
+
+
+.trunk {
+  height: 120px;
+  width: 40px;
+  margin-left: 4px;
+  background-color: #4D1D1D;
+  position: absolute;
+  z-index: 1;
+}
+
+</style>
+
+<div class="content">
+
+	<div id="sky">
+		<div class="cloud" id="cloud1"></div>
+		<div class="cloud" id="cloud2"></div>
+		<div class="cloud" id="cloud3"></div>
+
+
+		<div class="bird"></div>
+	
+
+		<div id="sun-whole">
+			<div id="sun-middle"></div>
+		</div>
+
+		<div id="description">
+			<p>Hey there, Buddy, welcome to our weird and wonderful world.</p>
+			<p>What shall we call you?</p> 
+		</div>
+
+
+		<div class="flower" id="flower1">
+		  <div class="petal1" id="petal1"></div>
+		  <div class="petal1" id="petal2"></div>
+		  <div class="petal1" id= "petal3"></div>
+		  <div class="petal1" id="petal4"></div>
+		  <div class="middle"></div>
+		  <div class="stem"></div>
+		  <div class="leaf1"></div>
+		  <div class="leaf2"></div>
+		</div> 
+
+
+		<div class="flower" id="flower2">
+		  <div class="petal2" id="petal1"></div>
+		  <div class="petal2" id="petal2"></div>
+		  <div class="petal2" id= "petal3"></div>
+		  <div class="petal2" id="petal4"></div>
+		  <div class="middle"></div>
+		  <div class="stem"></div>
+		  <div class="leaf1"></div>
+		  <div class="leaf2"></div>
+		</div> 
+
+
+		<div class="tree-container">
+		  <div class="bush" id="bush1"></div>
+		  <div class="bush" id="bush2"></div>
+		  <div class="bush" id="bush3"></div>
+		  <div class="bush" id="bush4"></div>
+		  <div class="bush" id="bush5"></div>
+		  <div class="trunk"></div>
+
+		</div>
+
+
+
+	</div>
+
+	<div id="land">
+
+
+	
+
+
+	</div>
+
+</div>	
