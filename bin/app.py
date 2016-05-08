@@ -718,7 +718,7 @@ class Poverty(Scene):
 
 class Decline(Scene):
 	def present(self, session):
-		pass
+		return render.decline()
 
 	def process(self, session):
 		pass
@@ -727,6 +727,13 @@ class Death(Scene):
 	def present(self, session):
 		return render.death(name = name)
 		
+	def process(self, session):
+		pass
+
+class Win(Scene):
+	def present(self, session):
+		return render.win(name = name)
+
 	def process(self, session):
 		pass
 
