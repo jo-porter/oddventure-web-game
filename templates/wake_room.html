@@ -1,23 +1,219 @@
 $def with (name)
 
 <style type="text/css">
+
 	body {
+		background-color: #222222;
+		font-size: 25px;
+		font-style: italic;
+		margin: 0;
+		padding: 0;
+		color: #222222;
+
+	}
+
+	.content {
+
+		height: 90%;
+		position:relative;
+	}
+
+	#description {
+
+		padding: 5px;
+		text-align: center;
+		width: 500px;
+		text-align: center;
+		margin-left: auto;
+		margin-right: auto;
 		color: white;
-		background-color: black
+		height: 90%;
+		z-index: 1;
+
+	}
+
+	#wall {
+		width: 100%;
+		height: 70%;
+		background-color: #000000;
+		margin-bottom: none;
+		position: static;
+
+	}
+
+	#tunnel {
+		background-image: linear-gradient(to left, #292D29, #5B5F5C);
+		height: 200px;
+		width: 140px;
+		border-radius: 50%;
+		margin-top: 165px;
+		margin-left: 20px;
+		position: absolute;
+		border: solid 5px #202521;
+	}
+
+	#vent {
+		width: 160px;
+		height:180px;
+		background-image: linear-gradient(to left, #292D29, #5B5F5C);
+		position:absolute;
+		margin-top: 185px;
+		margin-left: 1150px;
+		border: solid 5px #202521;
+	}
+
+	.bar-vert {
+		height: 180px;
+		width: 4px;
+		background-color: black;
+	}
+
+
+	#bar1 {
+		position: absolute;
+		margin-left: 32px;
+
+	}
+
+	#bar2 {
+		position: absolute;
+		margin-left: 64px;
+
+	}
+
+	#bar3 {
+		position: absolute;
+		margin-left: 96px;
+
+	}
+
+	#bar4 {
+		position: absolute;
+		margin-left: 128px;
+
+	}
+
+	.bar-horz {
+		height: 4px;
+		width: 160px;
+		background-color: black;
 
 	}
 
 
+	#horz1 {
+		position: absolute;
+		margin-top: 36px;
+
+	}
+
+	#horz2 {
+		position: absolute;
+		margin-top: 72px;
+
+	}
+
+	#horz3 {
+		position: absolute;
+		margin-top: 108px;
+
+	}
+
+	#horz4 {
+		position: absolute;
+		margin-top: 144px;
+
+	}
+
+
+
+
+
+	#floor {
+		width: 100%;
+		height: 50%;
+		background-color: #222222;
+		color: white;
+		margin-top: none;
+		position: absolute;
+	}
+
+
+	#you {
+		height: 150px;
+		width: 150px;
+		background-color: #AD0404;
+		margin-left: 400px;
+		z-index: 2;
+		margin-top: -80px;
+	}
+
+	.face {
+		font-size: 50px
+
+	}
+
+
+
+		@font-face {
+			font-family: 'caudex';
+			src: url('../caudex-italic.ttf');
+		}
+
+	#form {
+		width: 400px;
+		margin-right: auto;
+		margin-left: auto;
+		padding: none;
+		margin: none;
+		position: relative;
+
+	}
+
+	#text {
+		width: 400px;
+/*			height: 40px;
+*/			font-size: 20px;
+
+	}
+
+	#submit {
+		width: 80px;
+		margin-top: 2px;
+		margin-left: 160px;
+
+	}
+
+	footer {
+			margin-right: auto;
+			margin-left: auto;
+
+		}
+
+
+
 </style>
 
+<div class="content">
 
-<div class='content'>
+	<div id="wall">
 
 
+		<div id="tunnel"></div>
 
+		<div id="vent">
+			<div class="bar-vert" id="bar1"></div>
+			<div class="bar-vert" id="bar2"></div>
+			<div class="bar-vert" id="bar3"></div>
+			<div class="bar-vert" id="bar4"></div>	
 
-	<div class="description">
+			<div class="bar-horz" id="horz1"></div>
+			<div class="bar-horz" id="horz2"></div>
+			<div class="bar-horz" id="horz3"></div>
+			<div class="bar-horz" id="horz4"></div>
+		</div>
 
+		<div id="description">
 		<p>Great to meet you $name</p>
 
 
@@ -25,8 +221,25 @@ $def with (name)
 		out, but there is no answer. The only door is locked. You survey
 		the room: There is a tunnel on the south side, and a ventilation
 		shaft to the north. Which do you choose?</p>
+		</div>
+
+
+
+
+
+
+
 
 	</div>
 
+	<div id="floor">
 
-</div>
+		<div id="you">
+	
+		</div>
+	
+
+
+	</div>
+
+</div>	
