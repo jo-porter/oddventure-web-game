@@ -1,6 +1,80 @@
-<div class="description">
-	<p>You find yourself face to face with a powerful sorcerer. She promises to 
-		let you go free if you can solve her riddle. If you fail, she will turn 
-		you into a coffee table, doomed to spend eternity covered in ring stains 
-		and out of date copies of New Sorcerer. Do you accept the challenege?</p>
+<style type="text/css">
+
+#star-container {
+	margin: 150px 500px;
+
+}
+
+#star-five {
+	z-index: 1;
+	margin: 100px 0; 
+	position: relative; 
+	display: block; 
+	color: white; 
+	width: 0px; 
+	height: 0px; 
+	border-right: 100px solid transparent; 
+	border-bottom: 70px solid white; 
+	border-left: 100px solid transparent; 
+	-moz-transform: rotate(35deg); 
+	-webkit-transform: rotate(35deg); 
+	-ms-transform: rotate(35deg); 
+	-o-transform: rotate(35deg); 
+} 
+
+#star-five:before {
+	z-index: 1;
+	border-bottom: 80px solid white; 
+	border-left: 30px solid transparent; 
+	border-right: 30px solid transparent; 
+	position: absolute; 
+	height: 0; 
+	width: 0; 
+	top: -45px; 
+	left: -65px; 
+	display: block; 
+	content: ''; 
+	-webkit-transform: rotate(-35deg); 
+	-moz-transform: rotate(-35deg); 
+	-ms-transform: rotate(-35deg); 
+	-o-transform: rotate(-35deg); 
+} 
+
+#star-five:after { 
+	z-index: 1;
+	position: absolute; 
+	display: block; 
+	color: white; 
+	top: 3px; 
+	left: -105px; 
+	width: 0px; 
+	height: 0px; 
+	border-right: 100px solid transparent; 
+	border-bottom: 70px solid white; 
+	border-left: 100px solid transparent; 
+	-webkit-transform: rotate(-70deg); 
+	-moz-transform: rotate(-70deg); 
+	-ms-transform: rotate(-70deg); 
+	-o-transform: rotate(-70deg); 
+	content: ''; 
+}
+
+
+</style>
+
+
+<div class='content'>
+
+	<div id="star-container">
+		<div id="star-five"></div>
+	</div>
+
+
+	<div class="description">
+		<p>You find yourself face to face with a powerful sorcerer. She promises to 
+			let you go free if you can solve her riddle. If you fail, she will turn 
+			you into a coffee table, doomed to spend eternity covered in ring stains 
+			and out of date copies of New Sorcerer. Do you accept the challenege?</p>
+	</div>
+
 </div>
