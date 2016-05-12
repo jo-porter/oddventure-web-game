@@ -6,4 +6,4 @@ Front end is HTML and CSS, and still very much a work in progress, but the game 
 
 To play: 
 
-Clone the repo, and within oddventure-web-game folder run python bin/app.py and go to localhost:8080/game to begin.
+Clone the repo, add a /sessions folder and within oddventure-web-game folder run python bin/app.py and go to localhost:8080/game to begin.
