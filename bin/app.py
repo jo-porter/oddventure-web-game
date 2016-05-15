@@ -562,19 +562,16 @@ class WizardError(Scene):
 class Riddle(Scene):
 
 	def present(self, session):
-		return render.riddle()
+		return render_quiz.riddle()
 
 	def process(self, session):
-		key_words = Scene.userInput(self)
-		for i in key_words:
-			if i == 'purple':
-				session.scene = 'win'
-				break
-			elif i == 'red':
-				session.scene = 'death'
-				break
-			else:
-				session.scene = 'riddleerror'
+		answer = web.input(primary = [])
+		if str(answer) == "purple":
+			session.scene = 'win'
+		elif str(answer) == "red":
+			session.scene = 'death'
+		else:
+			session.scene = 'riddleerror'
 		return session
 
 class RiddleError(Scene):
