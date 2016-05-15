@@ -181,8 +181,7 @@ empty_room_intro = """
 		That's all.
 """
 
-
-
+greenpeace_answer = ['rainbow', 'warrior']
 
 
 

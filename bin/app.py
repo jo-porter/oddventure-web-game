@@ -412,24 +412,38 @@ class OceanError(Scene):
 
 class Tortoise(Scene):
 	def present(self, session):
-		return render_quiz.tortoise()
+		return render.tortoise()
 
 	def process(self, session):
 		pass
 
 class Overshoot(Scene):
 	def present(self, session):
-		return render_quiz.overshoot()
+		return render.overshoot()
 
 	def process(self, session):
-		pass
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if 'august' in i:
+				session.scene = 'win'
+			else:
+				session.scene = 'wrong'
+			return session
 
 class Greenpeace(Scene):
 	def present(self, session):
-		return render_quiz.greenpeace()
+		return render.greenpeace()
 
 	def process(self, session):
-		pass
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if i in greenpeace_answer:
+				session.scene = 'win'
+				break
+			else:
+				session.scene = 'wrong'
+				break
+			return session
 
 
 class Godot(Scene):
@@ -437,14 +451,30 @@ class Godot(Scene):
 		return render.godot()
 
 	def process(self, session):
-		pass
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if i in affirm:
+				session.scene = 'wait'
+				break
+			elif i in negate:
+				session.scene = 'continue'
+				break
+			else:
+				session.scene = 'godoterror'
+			return session
 
 class GodotError(Scene):
 	def present(self, session):
 		return render.godot_error()
 
 	def process(self, session):
-		pass
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if i in affirm:
+				session.scene = 'wait'
+			elif i in negate:
+				session.scene = 'continue'
+			return session
 
 class Child(Scene):
 	def present(self, session):
@@ -601,7 +631,17 @@ class Ninja(Scene):
 		return render.ninja()
 
 	def process(self, session):
-		pass
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if i in affirm:
+				session.scene = 'firststrike'
+				break
+			elif i in negate:
+				session.scene = 'pacify'
+				break
+			else:
+				session.scene = 'ninjaerror'
+		return session
 
 class NinjaError(Scene):
 	def present(self, session):
@@ -609,6 +649,48 @@ class NinjaError(Scene):
 
 	def process(self, session):
 		pass
+
+class FirstStrike(Scene):
+	def present(self, session):
+		return render.first_strike()
+
+	def process(self, session):
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if i in ninja_kick1:
+				session.scene = 'smash'
+				break
+			elif i in ninja_kick2:
+				session.scene = 'brutal'
+				break
+			else:
+				session.scene = 'ninjaerror'
+		return session
+
+class Smash(Scene):
+	def present(self, session):
+		return render.smash()
+
+	def process(self, session):
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if 'elbow' in i:
+				session.scene = 'victory'
+				break
+			elif 'backfist' in i:
+				session.scene = 'brutal'
+				break
+			else:
+				session.scene = 'ninjaerror'
+		return session
+
+
+class Brutal(Scene):
+	def present(self, session):
+		return render.brutal()
+
+	def process(self, session):
+		pass	
 
 
 class SpaceTime(Scene):
@@ -696,24 +778,37 @@ class HistorianError(Scene):
 
 class War(Scene):
 	def present(self, session):
-		return render_quiz.war()
+		return render.war()
 
-	def process(sels, session):
-		pass
+	def process(self, session):
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if '19' in i:
+				session.scene = 'win'
+			else:
+				session.scene = 'wrong'
+			return session
+
 
 class Acidification(Scene):
 	def present(self, session):
-		return render_quiz.acidification()
+		return render.acidification()
 
 	def process(self, session):
 		pass
 
 class Poverty(Scene):
 	def present(self, session):
-		return render_quiz.poverty()
+		return render.poverty()
 
 	def process(self, session):
-		pass
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if '1.90' in i:
+				session.scene = 'win'
+			else:
+				session.scene = 'wrong'
+			return session
 
 
 class Decline(Scene):
@@ -736,6 +831,23 @@ class Win(Scene):
 
 	def process(self, session):
 		pass
+
+class Wrong(Scene):
+	def present(self, session):
+		return render.wrong(name = name)
+
+	def process(self, session):
+		pass
+
+class Wait(Scene):
+	def present(self, session):
+		return render.wait()
+
+class Victory(Scene):
+	def present(self, session):
+		return render.victory()
+
+
 
 scene_map = {
 	'greeting': Greeting,
@@ -771,6 +883,9 @@ scene_map = {
 	'riddleerror': RiddleError,
 	'ninja': Ninja,
 	'ninjaerror': NinjaError,
+	'firststrike': FirstStrike,
+	'smash': Smash,
+	'brutal': Brutal,
 	'spacetime': SpaceTime,
 	'spacetimeerror': SpaceTimeError,
 	'historian': Historian,
@@ -780,7 +895,10 @@ scene_map = {
 	'poverty': Poverty,
 	'decline': Decline,
 	'death': Death,
-	'win': Win
+	'win': Win,
+	'wrong': Wrong,
+	'wait': Wait,
+	'victory': Victory
 
 }
 
