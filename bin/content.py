@@ -183,7 +183,7 @@ empty_room_intro = """
 
 greenpeace_answer = ['rainbow', 'warrior']
 
-
+valid_ninja = ['left', 'right', 'duck']
 
 
 

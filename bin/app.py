@@ -169,10 +169,10 @@ class PostSpin(Scene):
 		key_words = Scene.userInput(self)
 		for i in key_words:
 			if i in affirm or i in ahead:	
-				number = random.randint(0, 7)
-				if int(number) in range(0, 3):
+				number = random.randint(0, 12)
+				if int(number) in range(0, 5):
 					session.scene = 'child'
-				elif int(number) in range(3, 6):
+				elif int(number) in range(6, 11):
 					session.scene = 'spacetime'
 				else:
 					session.scene = 'wakeagain'
@@ -415,7 +415,13 @@ class Tortoise(Scene):
 		return render.tortoise()
 
 	def process(self, session):
-		pass
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if '2014' in i:
+				session.scene = 'win'
+			else:
+				session.scene = 'wrong'
+			return session
 
 class Overshoot(Scene):
 	def present(self, session):
@@ -648,7 +654,17 @@ class NinjaError(Scene):
 		return render.ninja_error()
 
 	def process(self, session):
-		pass
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if i in affirm:
+				session.scene = 'firststrike'
+				break
+			elif i in negate:
+				session.scene = 'pacify'
+				break
+			else:
+				session.scene = 'ninjaerror'
+		return session
 
 class FirstStrike(Scene):
 	def present(self, session):
@@ -690,7 +706,18 @@ class Brutal(Scene):
 		return render.brutal()
 
 	def process(self, session):
-		pass	
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if i in valid_ninja:
+				outcome = random.randint(0, 1)
+				if int(outcome) == 0:
+					session.scene = 'victory'
+				else:
+					session.scene = 'death'
+				return session.scene
+			else:
+				session.scene = 'death'
+			return session.scene
 
 
 class SpaceTime(Scene):
@@ -795,7 +822,13 @@ class Acidification(Scene):
 		return render.acidification()
 
 	def process(self, session):
-		pass
+		key_words = Scene.userInput(self)
+		for i in key_words:
+			if '300' in i:
+				session.scene = 'win'
+			else:
+				session.scene = 'wrong'
+			return session
 
 class Poverty(Scene):
 	def present(self, session):
