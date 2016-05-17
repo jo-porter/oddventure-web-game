@@ -666,6 +666,10 @@ class NinjaError(Scene):
 				session.scene = 'ninjaerror'
 		return session
 
+class Pacify(Scene):
+	def present(self, session):
+		return render.pacify()
+
 class FirstStrike(Scene):
 	def present(self, session):
 		return render.first_strike()
@@ -916,6 +920,7 @@ scene_map = {
 	'riddleerror': RiddleError,
 	'ninja': Ninja,
 	'ninjaerror': NinjaError,
+	'pacify': Pacify,
 	'firststrike': FirstStrike,
 	'smash': Smash,
 	'brutal': Brutal,
