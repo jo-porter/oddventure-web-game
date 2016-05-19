@@ -1,6 +1,53 @@
+<style type="text/css">
+
+	body {
+		font-size: 24px;
+		font-family: monospace;
+		background-color: #000000;
+		color: #FFFFFF;
+	}
+
+	.description {
+		padding-left: 200px;
+		padding-right: 200px;
+		height: 85%;
+
+	}
+
+	.content {
+		height: 85%;
+	}
+
+	#form {
+/*		width: 800px;
+*/		margin-right: auto;
+		margin-left: auto;
+		padding: none;
+		margin: none;
+		position: relative;
+
+	}
+
+	button {
+		font-family: monospace;
+		font-size: 24px;
+		padding: 5px;
+
+	}
+
+
+</style>
+
 <div class="description">
 	<p>What was the name of the Greenpeace vessel which was bombed and sunk in 1985 by the French Intelligence Service?</p>
 	
-	<p>The Rainbow Warrior, The Esperanza or The Arctic Sunrise?</p>
-
+<footer>
+	<div id="form">
+		<form action="/game" method="POST" name="form">
+				<button id="green1" name="action" value="rainbow">The Rainbow Warrior</button>
+				<button id="green2" name="action" value="esperanza">The Esperanza</button>
+				<button id="green3" name="action" value="sunrise">The Arctic Sunrise</button>
+		</form>
+	</div>
+</footer>
 </div>

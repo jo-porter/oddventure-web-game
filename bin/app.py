@@ -24,7 +24,7 @@ else:
 # creates a render variable which runs the render method from web.template with templates/ and a base layout
 render = web.template.render('templates/', base="text")
 
-render_quiz = web.template.render('templates/')
+render_blank = web.template.render('templates/')
 
 render_error = web.template.render('templates/', base="error")
 
@@ -46,7 +46,7 @@ class GameEngine(object):
 		next_scene = current_scene.process(session)
 		current_scene = scene_map[session.scene]()
 
-		return current_scene.present(session.scene)
+		return current_scene.present(session)
 
 
 class Scene(object):
@@ -412,44 +412,42 @@ class OceanError(Scene):
 
 class Tortoise(Scene):
 	def present(self, session):
-		return render.tortoise()
+		return render_blank.tortoise()
 
 	def process(self, session):
-		key_words = Scene.userInput(self)
-		for i in key_words:
-			if '2014' in i:
-				session.scene = 'win'
-			else:
-				session.scene = 'wrong'
-			return session
+		form = web.input(action=None)
+		answer = form.action	
+		if answer == '2014':
+			session.scene = 'win'
+		else:
+			session.scene = 'wrong'
+		return session
 
 class Overshoot(Scene):
 	def present(self, session):
-		return render.overshoot()
+		return render_blank.overshoot()
 
 	def process(self, session):
-		key_words = Scene.userInput(self)
-		for i in key_words:
-			if 'august' in i:
-				session.scene = 'win'
-			else:
-				session.scene = 'wrong'
-			return session
+		form = web.input(action=None)
+		answer = form.action
+		if answer == 'august':
+			session.scene = 'win'
+		else:
+			session.scene = 'wrong'
+		return session
 
 class Greenpeace(Scene):
 	def present(self, session):
-		return render.greenpeace()
+		return render_blank.greenpeace()
 
 	def process(self, session):
-		key_words = Scene.userInput(self)
-		for i in key_words:
-			if i in greenpeace_answer:
-				session.scene = 'win'
-				break
-			else:
-				session.scene = 'wrong'
-				break
-			return session
+		form = web.input(action=None)
+		answer = form.action
+		if answer == 'rainbow':
+			session.scene = 'win'
+		else:
+			session.scene = 'wrong'
+		return session
 
 
 class Godot(Scene):
@@ -479,8 +477,12 @@ class GodotError(Scene):
 			if i in affirm:
 				session.scene = 'wait'
 			elif i in negate:
-				session.scene = 'continue'
+				session.scene = 'persist'
 			return session
+
+class Continue(Scene):
+	def present(self, session):
+		return render_blank.persist()
 
 class Child(Scene):
 	def present(self, session):
@@ -598,37 +600,15 @@ class WizardError(Scene):
 class Riddle(Scene):
 
 	def present(self, session):
-		return render.riddle()
+		return render_blank.riddle()
 
 	def process(self, session):
-		key_words = Scene.userInput(self)
-		for i in key_words:
-			if i == 'purple':
-				session.scene = 'win'
-				break
-			elif i == 'red':
-				session.scene = 'death'
-				break
-			else:
-				session.scene = 'riddleerror'
-		return session
-
-class RiddleError(Scene):
-
-	def present(self, session):
-		return render.riddle_error(name = name)
-
-	def process(self, session):
-		key_words = Scene.userInput(self)
-		for i in key_words:
-			if i == 'purple':
-				session.scene = 'win'
-				break
-			elif i == 'red':
-				session.scene = 'death'
-				break
-			else:
-				session.scene = 'riddleerror'
+		form = web.input(action=None)
+		answer = form.action
+		if answer == 'purple':
+			session.scene = 'win'
+		else:
+			session.scene = 'wrong'
 		return session
 
 
@@ -766,7 +746,6 @@ class Historian(Scene):
 
 			if i in affirm:
 				which_q = random.randint(0,3)
-
 				if which_q == 0:
 					session.scene = 'war'
 				elif which_q == 1:
@@ -809,80 +788,80 @@ class HistorianError(Scene):
 
 class War(Scene):
 	def present(self, session):
-		return render.war()
+		return render_quiz.war()
 
 	def process(self, session):
-		key_words = Scene.userInput(self)
-		for i in key_words:
-			if '19' in i:
-				session.scene = 'win'
-			else:
-				session.scene = 'wrong'
-			return session
+		form = web.input(action=None)
+		answer = form.action 
+		if answer == '19':
+			session.scene = 'win'
+		else:
+			session.scene = 'wrong'
+		return session
 
 
 class Acidification(Scene):
 	def present(self, session):
-		return render.acidification()
+		return render_blank.acidification()
 
 	def process(self, session):
-		key_words = Scene.userInput(self)
-		for i in key_words:
-			if '300' in i:
-				session.scene = 'win'
-			else:
-				session.scene = 'wrong'
-			return session
+		form = web.input(action=None)
+		answer = form.action 
+		if answer == '300':
+			session.scene = 'win'
+		else:
+			session.scene = 'wrong'
+		return session
 
 class Poverty(Scene):
 	def present(self, session):
-		return render.poverty()
+		return render_blank.poverty()
 
 	def process(self, session):
-		key_words = Scene.userInput(self)
-		for i in key_words:
-			if '1.90' in i:
-				session.scene = 'win'
-			else:
-				session.scene = 'wrong'
-			return session
+		form = web.input(action=None)
+		answer = form.action 
+		if answer == '1.90':
+			session.scene = 'win'
+		else:
+			session.scene = 'wrong'
+		return session
 
 
 class Decline(Scene):
 	def present(self, session):
-		return render.decline()
+		return render_blank.decline()
 
 	def process(self, session):
 		pass
 
 class Death(Scene):
 	def present(self, session):
-		return render.death(name = name)
+		return render_blank.death(name = name)
 		
 	def process(self, session):
 		pass
 
 class Win(Scene):
 	def present(self, session):
-		return render.win(name = name)
+		return render_blank.win(name = name)
 
 	def process(self, session):
 		pass
 
 class Wrong(Scene):
 	def present(self, session):
-		return render.wrong(name = name)
+		return render_blank.wrong(name = name)
 
 	def process(self, session):
 		pass
 
 class Wait(Scene):
 	def present(self, session):
-		return render.wait()
+		return render_blank.wait()
 
 class Victory(Scene):
 	def present(self, session):
-		return render.victory()
+		return render_blank.victory()
 
 
 
@@ -909,6 +888,7 @@ scene_map = {
 	'greenpeace': Greenpeace,
 	'godot': Godot,
 	'godoterror': GodotError,
+	'continue': Continue,
 	'child': Child,
 	'childerror': ChildError,
 	'bottle': Bottle,
@@ -917,7 +897,6 @@ scene_map = {
 	'wizard': Wizard,
 	'wizarderror': WizardError,
 	'riddle': Riddle,
-	'riddleerror': RiddleError,
 	'ninja': Ninja,
 	'ninjaerror': NinjaError,
 	'pacify': Pacify,

@@ -1,3 +1,42 @@
+<style type="text/css">
+
+	body {
+		font-size: 24px;
+		font-family: monospace;
+		background-color: #000000;
+		color: #FFFFFF;
+	}
+
+	.description {
+		padding-left: 200px;
+		padding-right: 200px;
+		height: 85%;
+
+	}
+
+	.content {
+		height: 85%;
+	}
+
+
+	#form {
+		width: 400px;
+		margin-right: auto;
+		margin-left: auto;
+		padding: none;
+		margin: none;
+		position: relative;
+	}
+
+	button {
+		font-size: 24px;
+		font-family: monospace;
+
+	}
+
+
+</style>
+
 <div class="description">
 	<p>		A dark closest contains 5 hats: 3 purple and 2 red. Knowing this to be 
 		the case, 3 friends enter the closet and each puts on a hat, without 
@@ -9,4 +48,13 @@
 		colour my hat is."</p>
 		
 		<p>What colour is the third person's hat?</p>
+
+<footer>
+	<div id="form">
+		<form action="/game" method="POST" name="form">
+				<button id="riddle1" name="action" value="purple">Purple</button>
+				<button id="riddle2" name="action" value="red">Red</button>
+		</form>
+	</div>
+</footer>
 </div>

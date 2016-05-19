@@ -1,38 +1,55 @@
 <style type="text/css">
+	body {
+		font-size: 24px;
+		font-family: monospace;
+		background-color: #000000;
+		color: #FFFFFF;
+	}
 
-/*body {
-	background-color: black;
-	border:none;
-	margin:none;
-	padding:none;
+	.description {
+		padding-left: 200px;
+		padding-right: 200px;
+		height: 85%;
 
-}
+	}
 
-.description {
-	margin-top: 60px;
-	padding: 60px;
-	margin-right: auto;
-	margin-left: auto;
-	font-family: sans-serif;
-	font-style: italic;
-	font-weight: 600;
-	width:500px;
-	background-color: white;
-	color: black;
-	font-size:30px;
-	text-align: center;
-	border-radius: 5%;
-	border: dashed gray 4px;
+	.content {
+		height: 85%;
+	}
 
-}*/
+	#form {
+		width: 400px;
+		margin-right: auto;
+		margin-left: auto;
+		padding: none;
+		margin: none;
+		position: relative;
+
+	}
+
+	button {
+		font-family: monospace;
+		font-size: 24px;
+
+	}
+
 
 </style>
 
 
 
 <div class="description">
-	<p>Due to the veracious burning of fossil fuels by human beings in recent times, ocean acidification (that's a bad thing, by the way) in 2015 was at it's heighest levels in how many years?</p>
+	<p>Due to the veracious burning of fossil fuels by human beings in recent times, ocean acidification (that's a bad thing, by the way) in 2015 was at it's heighest levels in how many <strong>million</strong> years?</p>
 
-	<p>200 million, 300 million or 400 million?</p>
 
 </div>
+
+<footer>
+	<div id="form">
+		<form action="/game" method="POST" name="form">
+				<button id="acid1" name="action" value="200">200</button>
+				<button id="acid2" name="action" value="300">300</button>
+				<button id="acid3" name="action" value="400">400</button>
+		</form>
+	</div>
+</footer>

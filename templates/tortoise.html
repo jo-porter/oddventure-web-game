@@ -1,4 +1,50 @@
+<style type="text/css">
+	body {
+		font-size: 24px;
+		font-family: monospace;
+		background-color: #000000;
+		color: #FFFFFF;
+	}
+
+	.description {
+		padding-left: 200px;
+		padding-right: 200px;
+		height: 85%;
+
+	}
+
+	.content {
+		height: 85%;
+	}
+
+	#form {
+		width: 400px;
+		margin-right: auto;
+		margin-left: auto;
+		padding: none;
+		margin: none;
+		position: relative;
+		font-size: 24px;
+	}
+
+	button {
+		font-family: monospace;
+		font-size: 24px;
+
+	}
+
+</style>
+
 <div class="description">
 	<p>In which year did Lonesome George, the last remaining Pinta Island Tortoise, die:</p>
-	<p>2012, 2013 or 2014?</p>
+
+<footer>
+	<div id="form">
+		<form action="/game" method="POST" name="form">
+				<button id="tort1" name="action" value="2012">2012</button>
+				<button id="tort2" name="action" value="2013">2013</button>
+				<button id="tort3" name="action" value="2014">2014</button>
+		</form>
+	</div>
+</footer>
 </div>
